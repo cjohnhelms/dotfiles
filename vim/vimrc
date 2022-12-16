@@ -1,0 +1,18 @@
+" Indention
+set autoindent
+set smarttab
+set tabstop=4
+
+" Search
+set hlsearch
+set ignorecase
+set smartcase
+
+" Text
+syntax enable
+
+" UI
+set ruler
+set number
+set noerrorbells
+set title
