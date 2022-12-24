@@ -1,2 +1,2 @@
 # dotfiles
-dotfiles for my arch linux installation
+dotfiles for linux installation
