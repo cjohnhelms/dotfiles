@@ -1,0 +1,18 @@
+include config.d/*.config
+
+Host login.*
+  ProxyJump jump2
+
+Host jump2
+  ControlPersist 5m
+  ForwardAgent yes
+
+Host echo
+  ProxyJump jump2
+
+Host *
+  ControlPath ~/.ssh/control/%h-%p-%r
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+  UseKeychain yes
