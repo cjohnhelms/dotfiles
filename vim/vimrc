@@ -16,3 +16,6 @@ set ruler
 set number
 set noerrorbells
 set title
+
+" Git commit line wrap
+au FileType gitcommit setlocal tw=72
