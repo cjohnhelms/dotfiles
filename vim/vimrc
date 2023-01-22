@@ -19,3 +19,6 @@ set title
 
 " Git commit line wrap
 au FileType gitcommit setlocal tw=72
+
+" Auto intdent for yaml
+autocmd FileType yaml setlocal ai ts=2 sw=2 et
