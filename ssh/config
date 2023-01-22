@@ -1,6 +1,6 @@
 include config.d/*.config
 
-Host login.*
+Host login*
   ProxyJump jump2
 
 Host jump2
