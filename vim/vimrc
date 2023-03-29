@@ -2,6 +2,7 @@
 set autoindent
 set smarttab
 set tabstop=4
+set cuc
 
 " Search
 set hlsearch
@@ -21,4 +22,5 @@ set title
 au FileType gitcommit setlocal tw=72
 
 " Auto intdent for yaml
-autocmd FileType yaml setlocal ai ts=2 sw=2 et
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+let g:indentLine_char = '⦙'
