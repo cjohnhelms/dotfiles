@@ -2,7 +2,6 @@
 set autoindent
 set smarttab
 set tabstop=4
-set cuc
 
 " Search
 set hlsearch
