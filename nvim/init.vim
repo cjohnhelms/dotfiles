@@ -14,6 +14,7 @@ set mouse=a
 filetype plugin on
 set cursorline
 set ttyfast
+set relativenumber
 
 
 call plug#begin()
