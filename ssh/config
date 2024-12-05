@@ -1,7 +1,0 @@
-Host *
-  ControlPath ~/.ssh/control/%h-%p-%r
-  ForwardAgent yes
-  IdentityFile ~/.ssh/id_rsa
-  AddKeysToAgent yes
-  PubkeyAcceptedKeyTypes +ssh-rsa
-  HostKeyAlgorithms +ssh-dss,ssh-rsa
