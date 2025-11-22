@@ -103,6 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # 
+
+# Begin Custom
+#
+# vim
+alias vim="nvim"
+
 # AWS
 export AWS_CLI_AUTO_PROMPT=on-partial
 autoload bashcompinit && bashcompinit
@@ -111,3 +117,16 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 # Rust
 export PATH=~/.cargo/bin:$PATH
+
+# Aliases
+alias python="python3"
+
+[ -f "/Users/christopherhelms/.ghcup/env" ] && . "/Users/christopherhelms/.ghcup/env" # ghcup-env
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/christopherhelms/.opam/opam-init/init.zsh' ]] || source '/Users/christopherhelms/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
