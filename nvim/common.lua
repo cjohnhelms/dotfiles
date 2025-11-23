@@ -11,6 +11,9 @@ vim.opt.autoindent = true
 
 vim.opt.fileformat = "unix"
 
+-- lsp
+vim.diagnostic.config({ virtual_text = true })
+
 -- theme
 vim.cmd.colorscheme("vscode")
 
