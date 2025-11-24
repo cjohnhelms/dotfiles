@@ -27,22 +27,26 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+-- autocomplete
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- golang
 vim.lsp.config("gopls", {
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     gopls = {
-      analyses = {
-        unusedparams = true,
-      },
+      analyses = { unusedparams = true },
       staticcheck = true,
       gofumpt = true,
     },
   },
 })
+
 vim.lsp.enable({"gopls"})
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-	vim.lsp.diagnostic.on_publish_diagnostics, {
-		virtual_text = false
-	}
-)
+-- diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = false
+  })
