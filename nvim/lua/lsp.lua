@@ -42,8 +42,14 @@ vim.lsp.config("gopls", {
     },
   },
 })
-
 vim.lsp.enable({"gopls"})
+
+-- ocaml
+vim.lsp.config("ocamllsp", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+vim.lsp.enable({"ocamllsp"})
 
 -- diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
