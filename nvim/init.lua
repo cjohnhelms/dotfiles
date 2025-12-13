@@ -60,6 +60,5 @@ require("lazy").setup({
 -- Load User Config Modules
 -- ===========================
 require("tree")
-require("lsp")
 require("treesitter")
-
+require("lsp")
