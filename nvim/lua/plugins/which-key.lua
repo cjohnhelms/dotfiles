@@ -6,7 +6,7 @@ return {
     
     -- Setup which-key
     wk.setup({
-      preset = "modern",
+      preset = "helix",
       delay = 500,
       icons = {
         mappings = true,
@@ -17,11 +17,12 @@ return {
     -- Register key groups and mappings
     wk.add({
       { "<leader>f", group = "Find (Telescope)" },
-      { "<leader>w", group = "Workspace" },
+      { "<leader>w", group = "Window" },
       { "<leader>c", group = "Code" },
       { "<leader>r", group = "Rename" },
       { "<leader>q", group = "Diagnostics" },
       { "<leader>g", group = "Git" },
+      { "<leader>b", group = "Buffer" },
       { "[", group = "Previous" },
       { "]", group = "Next" },
     })

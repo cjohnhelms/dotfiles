@@ -1,15 +1,5 @@
--- plugins.lua
 return {
-  {
-    "Mofiqul/vscode.nvim",
-    lazy = false,           -- load during startup
-    priority = 1000,        -- make sure it loads before other UI plugins
-    config = function()
-      vim.cmd("colorscheme vscode")
-    end,
-  },
-
-    -- Import plugin configs
+  { import = "plugins.colorscheme" },
   { import = "plugins.lspconfig" },
   { import = "plugins.blink" },
   { import = "plugins.nvim-tree" },
@@ -19,6 +9,11 @@ return {
   { import = "plugins.lualine" },
   { import = "plugins.mason" },
   { import = "plugins.mason-lspconfig" },
-
+  { import = "plugins.bufferline" },
+  { import = "plugins.indent-blankline" },
+  { import = "plugins.gitsigns" },
+  { import = "plugins.neoscroll" },
+  { import = "plugins.autopairs" },
+  { import = "plugins.mini-comment" },
+  { import = "plugins.mini-surround" },
 }
-

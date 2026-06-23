@@ -5,7 +5,6 @@ return {
   },
   keys = {
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" },
-    { "<leader>o", "<cmd>NvimTreeFocus<cr>", desc = "Focus file explorer" },
   },
   init = function()
     -- disable netrw at the very start

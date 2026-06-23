@@ -1,0 +1,78 @@
+<h2>What's your editor vibe?</h2>
+<p class="subtitle">You have vscode.nvim right now. Which aesthetic direction feels most "you"?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="cozy" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1e1e2e;border-radius:6px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7">
+        <div style="color:#6c7086;margin-bottom:8px">// main.c</div>
+        <div><span style="color:#cba6f7">#include</span> <span style="color:#a6e3a1">&lt;stdio.h&gt;</span></div>
+        <div style="margin-top:6px"><span style="color:#cba6f7">int</span> <span style="color:#89b4fa">main</span><span style="color:#cdd6f4">(</span><span style="color:#cba6f7">void</span><span style="color:#cdd6f4">) {</span></div>
+        <div style="padding-left:20px"><span style="color:#89dceb">printf</span><span style="color:#cdd6f4">(</span><span style="color:#a6e3a1">"hello\n"</span><span style="color:#cdd6f4">);</span></div>
+        <div style="padding-left:20px"><span style="color:#cba6f7">return</span> <span style="color:#fab387">0</span><span style="color:#cdd6f4">;</span></div>
+        <div style="color:#cdd6f4">}</div>
+        <div style="margin-top:10px;padding:4px 8px;background:#313244;border-left:3px solid #cba6f7;color:#6c7086;font-size:11px">NORMAL  main.c  lua  ●</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Cozy & Warm</h3>
+      <p>Catppuccin Mocha — purples, pinks, soft pastels on deep dark. The most popular "pretty" theme in the Neovim community right now.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="sharp" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1a1b26;border-radius:6px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7">
+        <div style="color:#565f89;margin-bottom:8px">// main.c</div>
+        <div><span style="color:#9d7cd8">#include</span> <span style="color:#9ece6a">&lt;stdio.h&gt;</span></div>
+        <div style="margin-top:6px"><span style="color:#9d7cd8">int</span> <span style="color:#7aa2f7">main</span><span style="color:#c0caf5">(</span><span style="color:#9d7cd8">void</span><span style="color:#c0caf5">) {</span></div>
+        <div style="padding-left:20px"><span style="color:#7dcfff">printf</span><span style="color:#c0caf5">(</span><span style="color:#9ece6a">"hello\n"</span><span style="color:#c0caf5">);</span></div>
+        <div style="padding-left:20px"><span style="color:#9d7cd8">return</span> <span style="color:#ff9e64">0</span><span style="color:#c0caf5">;</span></div>
+        <div style="color:#c0caf5">}</div>
+        <div style="margin-top:10px;padding:4px 8px;background:#16161e;border-left:3px solid #7aa2f7;color:#565f89;font-size:11px">NORMAL  main.c  lua  ●</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Sharp & Electric</h3>
+      <p>Tokyo Night — deep navy with electric blues and bright accents. Crisp and modern, feels like coding at midnight in a city.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="earthy" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1d2021;border-radius:6px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7">
+        <div style="color:#7c6f64;margin-bottom:8px">// main.c</div>
+        <div><span style="color:#d3869b">#include</span> <span style="color:#b8bb26">&lt;stdio.h&gt;</span></div>
+        <div style="margin-top:6px"><span style="color:#d3869b">int</span> <span style="color:#83a598">main</span><span style="color:#ebdbb2">(</span><span style="color:#d3869b">void</span><span style="color:#ebdbb2">) {</span></div>
+        <div style="padding-left:20px"><span style="color:#8ec07c">printf</span><span style="color:#ebdbb2">(</span><span style="color:#b8bb26">"hello\n"</span><span style="color:#ebdbb2">);</span></div>
+        <div style="padding-left:20px"><span style="color:#d3869b">return</span> <span style="color:#d79921">0</span><span style="color:#ebdbb2">;</span></div>
+        <div style="color:#ebdbb2">}</div>
+        <div style="margin-top:10px;padding:4px 8px;background:#282828;border-left:3px solid #d79921;color:#7c6f64;font-size:11px">NORMAL  main.c  lua  ●</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Earthy & Retro</h3>
+      <p>Gruvbox Dark Hard — warm amber, muted greens, vintage amber on near-black. The "craftsman" aesthetic, timeless and readable.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="keep" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1e1e1e;border-radius:6px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.7">
+        <div style="color:#6a9955;margin-bottom:8px">// main.c</div>
+        <div><span style="color:#c586c0">#include</span> <span style="color:#ce9178">&lt;stdio.h&gt;</span></div>
+        <div style="margin-top:6px"><span style="color:#569cd6">int</span> <span style="color:#dcdcaa">main</span><span style="color:#d4d4d4">(</span><span style="color:#569cd6">void</span><span style="color:#d4d4d4">) {</span></div>
+        <div style="padding-left:20px"><span style="color:#dcdcaa">printf</span><span style="color:#d4d4d4">(</span><span style="color:#ce9178">"hello\n"</span><span style="color:#d4d4d4">);</span></div>
+        <div style="padding-left:20px"><span style="color:#569cd6">return</span> <span style="color:#b5cea8">0</span><span style="color:#d4d4d4">;</span></div>
+        <div style="color:#d4d4d4">}</div>
+        <div style="margin-top:10px;padding:4px 8px;background:#252526;border-left:3px solid #569cd6;color:#6a9955;font-size:11px">NORMAL  main.c  lua  ●</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Keep VS Code Style</h3>
+      <p>Stick with vscode.nvim — familiar, clean, professional. We'd focus purely on workflow plugins and UI polish instead.</p>
+    </div>
+  </div>
+
+</div>

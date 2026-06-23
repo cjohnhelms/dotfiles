@@ -13,9 +13,15 @@ return {
   config = function()
     require("telescope").setup({
       defaults = {
-        file_ignore_patterns = { "node_modules", ".git/" },
+        file_ignore_patterns = { "node_modules", "%.git/" },
         layout_config = {
           horizontal = { preview_width = 0.55 },
+        },
+      },
+      pickers = {
+        buffers = {
+          show_all_buffers = true,
+          sort_lastused = true,
         },
       },
     })

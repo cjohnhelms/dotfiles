@@ -14,15 +14,35 @@ return {
         gofumpt = true,
       },
       ocamllsp = {},
+      clangd = { cmd = { "clangd", "--fallback-style=Linux" } },
+      pyright = {},
+      rust_analyzer = {
+        cmd = { vim.fn.expand("~/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer") },
+      },
 	}
   },
   config = function(_, opts)
+    vim.api.nvim_create_autocmd('LspAttach', {
+      callback = function(ev)
+        local bufopts = { noremap = true, silent = true, buffer = ev.buf }
+
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend('force', bufopts, { desc = "Go to declaration" }))
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend('force', bufopts, { desc = "Go to definition" }))
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend('force', bufopts, { desc = "Hover documentation" }))
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, vim.tbl_extend('force', bufopts, { desc = "Go to implementation" }))
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, vim.tbl_extend('force', bufopts, { desc = "Signature help" }))
+        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, vim.tbl_extend('force', bufopts, { desc = "Rename symbol" }))
+        vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, vim.tbl_extend('force', bufopts, { desc = "Code action" }))
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, vim.tbl_extend('force', bufopts, { desc = "Go to references" }))
+        vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end, vim.tbl_extend('force', bufopts, { desc = "Format buffer" }))
+      end,
+    })
+
     for server, config in pairs(opts.servers) do
-      -- passing config.capabilities to blink.cmp merges with the capabilities in your
-      -- `opts[server].capabilities, if you've defined it
       config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 	  vim.lsp.config(server, config)
     end
+    vim.lsp.enable(vim.tbl_keys(opts.servers))
   end
 }
 
