@@ -68,3 +68,5 @@ vim.opt.cursorline = true
 vim.opt.relativenumber = true
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { silent = true, desc = "Exit terminal insert mode" })
+
+vim.keymap.set("n", "<leader>q", vim.diagnostic.open_float, { silent = true, desc = "Show diagnostics" })

@@ -22,6 +22,25 @@ return {
         buffers = {
           show_all_buffers = true,
           sort_lastused = true,
+          mappings = {
+            n = {
+              ["<C-d>"] = function(prompt_bufnr)
+                local actions = require("telescope.actions")
+                local action_state = require("telescope.actions.state")
+                local picker = action_state.get_current_picker(prompt_bufnr)
+                local selections = picker:get_multi_selection()
+                if #selections == 0 then
+                  selections = { action_state.get_selected_entry() }
+                end
+                actions.close(prompt_bufnr)
+                for _, entry in ipairs(selections) do
+                  if entry ~= nil then
+                    vim.api.nvim_buf_delete(entry.bufnr, { force = false })
+                  end
+                end
+              end,
+            },
+          },
         },
       },
     })
