@@ -16,16 +16,15 @@ return {
     vim.opt.termguicolors = true
     
     require("nvim-tree").setup({
-      -- You can add custom options here
-      -- view = {
-      --   width = 30,
-      -- },
-      -- renderer = {
-      --   group_empty = true,
-      -- },
-      -- filters = {
-      --   dotfiles = false,
-      -- },
+	  filters = {
+        -- Set to false so that dotfiles like .env are always visible by default
+	    dotfiles = false, 
+      },
+      git = {
+        enable = true,
+        -- Set to false if your .env is in .gitignore but you still want to see it
+        ignore = false, 
+      },
     })
   end,
 }

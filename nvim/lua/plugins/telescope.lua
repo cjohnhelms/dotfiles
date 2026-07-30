@@ -9,6 +9,7 @@ return {
     { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
+    { "<leader>ft", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme picker" },
   },
   config = function()
     require("telescope").setup({
@@ -41,6 +42,9 @@ return {
               end,
             },
           },
+        },
+        colorscheme = {
+          enable_preview = true,
         },
       },
     })

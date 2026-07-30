@@ -47,6 +47,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.c", "*.cpp", "*.h", "*.hpp" },
   callback = function()
     local buf = vim.api.nvim_get_current_buf()

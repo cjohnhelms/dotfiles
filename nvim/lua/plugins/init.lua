@@ -9,7 +9,6 @@ return {
   { import = "plugins.lualine" },
   { import = "plugins.mason" },
   { import = "plugins.mason-lspconfig" },
-  { import = "plugins.bufferline" },
   { import = "plugins.indent-blankline" },
   { import = "plugins.gitsigns" },
   { import = "plugins.neoscroll" },
