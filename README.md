@@ -1,2 +1,2 @@
 # dotfiles
-dotfiles for linux installation
+dotfiles
